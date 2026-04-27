@@ -1,0 +1,49 @@
+{
+  "scopeName": "inline.css",
+  "injectionSelector": "L:source.js -comment -string, L:source.ts -comment -string, L:source.js.jsx -comment -string, L:source.tsx -comment -string",
+  "patterns": [
+    {
+      "contentName": "meta.embedded.block.css",
+      "begin": "(\\/\\*css\\*\\/\\s*)(`)",
+      "beginCaptures": {
+        "1": {
+          "name": "comment.block.css-marker.js"
+        },
+        "2": {
+          "name": "punctuation.definition.string.template.begin.js"
+        }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
+      "patterns": [
+        {
+          "contentName": "meta.embedded.line.ts",
+          "begin": "\\$\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.template-expression.begin.js"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.template-expression.end.js"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.ts#expression"
+            }
+          ]
+        },
+        {
+          "include": "source.css"
+        }
+      ]
+    }
+  ]
+}

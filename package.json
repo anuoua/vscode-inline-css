@@ -1,0 +1,57 @@
+{
+  "name": "vscode-inline-css",
+  "displayName": "Inline CSS",
+  "description": "Syntax highlighting and IntelliSense for CSS in /*css*/ tagged template strings",
+  "version": "0.0.1",
+  "publisher": "inline-css",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "grammars": [
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.js.jsx",
+          "source.tsx"
+        ],
+        "scopeName": "inline.css",
+        "path": "./syntaxes/inline-css.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.css": "css",
+          "meta.embedded.line.ts": "typescript"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.9.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "vscode-css-languageservice": "^6.3.0",
+    "vscode-languageserver-textdocument": "^1.0.11",
+    "vscode-languageserver-types": "^3.17.5"
+  }
+}
