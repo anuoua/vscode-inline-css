@@ -3,7 +3,7 @@
   "displayName": "Inline CSS",
   "description": "Syntax highlighting and IntelliSense for CSS in /*css*/ tagged template strings",
   "version": "0.0.3",
-  "publisher": "inline-css",
+  "publisher": "anuoua",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.90.0"
