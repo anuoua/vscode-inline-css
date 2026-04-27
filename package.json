@@ -2,7 +2,7 @@
   "name": "vscode-inline-css",
   "displayName": "Inline CSS",
   "description": "Syntax highlighting and IntelliSense for CSS in /*css*/ tagged template strings",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "anuoua",
   "icon": "icon.png",
   "engines": {
