@@ -4,6 +4,7 @@ export interface InterpolationOffset {
   originalStart: number;
   originalEnd: number;
   virtualLength: number;
+  originalText: string;
 }
 
 export interface CssRegion {
@@ -78,10 +79,12 @@ function replaceInterpolations(cssContent: string): { replaced: string; offsets:
       const end = findInterpolationEnd(cssContent, i + 2);
       if (end !== -1) {
         const placeholder = "/* __placeholder__ */";
+        const originalText = cssContent.substring(interpStart, end + 1);
         offsets.push({
           originalStart: interpStart,
           originalEnd: end + 1,
           virtualLength: placeholder.length,
+          originalText: originalText,
         });
         result += placeholder;
         i = end + 1;

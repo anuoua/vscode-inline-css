@@ -19,6 +19,12 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "inlineCss.format",
+        "title": "Inline CSS: Format"
+      }
+    ],
     "grammars": [
       {
         "injectTo": [
