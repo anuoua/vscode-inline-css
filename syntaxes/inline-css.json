@@ -4,7 +4,7 @@
   "patterns": [
     {
       "contentName": "meta.embedded.block.css",
-      "begin": "(\\/\\*css\\*\\/\\s*)(`)",
+      "begin": "(\\/\\*\\s*css\\s*\\*\\/\\s*)(`)",
       "beginCaptures": {
         "1": {
           "name": "comment.block.css-marker.js"

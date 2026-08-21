@@ -1,19 +1,21 @@
 # Inline CSS
 
-Syntax highlighting and IntelliSense for CSS in `/*css*/` tagged template strings.
+Syntax highlighting and IntelliSense for CSS in `/* css */` tagged template strings.
 
 ## Usage
 
-Tag your template strings with `/*css*/` to get CSS syntax highlighting and autocompletion:
+Tag your template strings with `/* css */` to get CSS syntax highlighting and autocompletion:
 
 ```js
-const style = /*css*/`
+const style = /* css */`
   .container {
     display: flex;
     color: ${theme.color};
   }
 `;
 ```
+
+> Both `/* css */` and `/*css*/` are supported — whitespace around `css` is optional.
 
 ## Features
 
@@ -28,9 +30,9 @@ JavaScript, TypeScript, JSX, and TSX files.
 
 ## Formatting
 
-Run **Inline CSS: Format** from the command palette (`Ctrl+Shift+P`) to format all `/*css*/` tagged template strings in the current document. The formatted CSS indentation aligns with the surrounding code, and `${...}` interpolations are preserved.
+Run **Inline CSS: Format** from the command palette (`Ctrl+Shift+P`) to format all `/* css */` tagged template strings in the current document. The formatted CSS indentation aligns with the surrounding code, and `${...}` interpolations are preserved.
 
-This works alongside other formatters like Prettier — it only formats the CSS inside `/*css*/` regions and does not conflict with your default document formatter.
+This works alongside other formatters like Prettier — it only formats the CSS inside `/* css */` regions and does not conflict with your default document formatter.
 
 ## Development
 

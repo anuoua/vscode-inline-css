@@ -19,7 +19,7 @@ export interface CssRegion {
 export function findCssRegions(document: vscode.TextDocument): CssRegion[] {
   const text = document.getText();
   const regions: CssRegion[] = [];
-  const markerRegex = /\/\*css\*\/\s*`/g;
+  const markerRegex = /\/\*\s*css\s*\*\/\s*`/g;
   let match: RegExpExecArray | null;
 
   while ((match = markerRegex.exec(text)) !== null) {
